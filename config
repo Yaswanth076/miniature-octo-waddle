@@ -6,8 +6,5 @@
 	symlinks = false
 	ignorecase = true
 [remote "origin"]
-	url = https://github.com/Yaswanth076/ubiquitous-octo-guacamole.git
+	url = https://github.com/Sridhar2312/symmetrical-dollop.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
