@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Examination Portal</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0; padding: 0;
+        background: #f4f6f8;
+    }
+    nav {
+        background:rgb(0, 191, 255);
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+    nav a:hover {
+        background: rgb(0, 255, 110);
+        border-radius: 5px;
+    }
+    .container {
+        padding: 20px;
+        display: none;
+        animation: fadeIn 0.5s;
+    }
+    .active {
+        display: block;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    h1 {
+        color: #0077cc;
+    }
+    input, button, select {
+        padding: 8px;
+        margin: 5px 0;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background: rgb(255, 98, 0);
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #a30000;
+    }
+    .question {
+        background: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    }
+    .success-box {
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body>
+<div class="top-bar">
+<marquee> <span>🔴 NEW</span> Results Declared for II Semester MBA Regular and Supplementary (AR 22) examinations, June 2025. Last date to apply for revaluation/recounting is 31st July 2025. <span>🔴 NEW</span> AITAM is now NIRF ranking(201-300 band) institution awarded by union Ministry of education, Government of india,New Delhi </marquee>
+</div>
+<nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('login')">Login</a>
+    <a href="#" onclick="showPage('registration')">Registration</a>
+    <a href="#" onclick="showPage('test')">Test</a>
+    <a href="#" onclick="showPage('results')">Results</a>
+</nav>
+
+<!-- Home -->
+<div id="home" class="container active">
+        <header>
+            <h1 align="center">Welcome to Online Examination Portal</h1>
+            <p>This portal allows students to register for exams, take tests, and check results.</p>
+        </header>
+
+        <section>
+            <h2>About the Institution</h2>
+            <p>
+                Established in 2001, AITAM is a well-regarded private engineering and management college located in K. Kotturu, Tekkali, Srikakulam District, Andhra Pradesh.
+Target Admission
+The institute offers undergraduate B.Tech programs in disciplines like CSE (including AI/ML and Data Science), ECE, EEE, CE, ME, along with MBA and M.Tech courses, serving around 1,080 B.Tech, 60 MBA, and 60 M.Tech students annually. 
+ad 
+                <strong> It holds approvals from AICTE, UGC, and NBA, and is accredited with an “A+” Grade by NAAC.</strong> in 2001.
+            </p>
+            <p><em>Empowering Education Since 2001</em></p>
+        </section>
+
+    <!-- History Section -->
+    <section id="history">
+        <h2>Our History</h2>
+        <p>
+            Founded in 1995, Sunshine College has been a pioneer in providing world-class education. 
+            We started with just 100 students and now host over 5,000 students every year. Our alumni 
+            are making remarkable contributions globally in technology, business, and research.
+        </p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2>Courses Offered</h2>
+        <ul>
+
+         <li>Degree Programs</li>         
+            <li>Certificates / Vocational Training</li>   
+            <li>Remedial / Developmental Courses</li>
+            <li>Continuing Education & Local Services</li>                 
+            <li> Flexible / Micro-credential Models</li>                  
+            <li>Virtual Campus Offerings</li>    
+            <li> Honors / Special Programs</li>             
+            <li>Bachelor of Science in Computer Science</li>
+            <li>Bachelor of Commerce</li>
+            <li>Bachelor of Arts in Literature</li>
+            <li>Master of Business Administration</li>
+            <li>Diploma in Digital Marketing</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@adityatekkali.edu</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: 123 College Road, Hyderabad, India</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aditya institute of technology and mangement. All rights reserved.</p>
+    </footer>
+    </div>
+
+</body>
+</html>
+
+<!-- Login -->
+<div id="login" class="container">
+    <h1>Login</h1>
+    <label>Role:</label>
+    <select id="role">
+        <option value="student">Student</option>
+        <option value="faculty">Faculty</option>
+    </select>
+    <label>Roll Number / ID:</label>
+    <input type="text" id="userid">
+    <label>Password:</label>
+    <input type="password" id="password">
+    <button onclick="login()">Login</button>
+    <div id="studentDetails" style="margin-top:20px; display:none;">
+        <h3>Student Details</h3>
+        <p><b>Course Code:</b> DS101</p>
+        <p><b>Course Name:</b> Data Science</p>
+        <p><b>Roll Number:</b> 21DS001</p>
+        <p><b>Year:</b> 3rd</p>
+        <p><b>Regulation:</b> R20</p>
+        <p><b>CGPA:</b> 8.75</p>
+        <p><b>SGPA (last sem):</b> 8.9</p>
+    </div>
+</div>
+
+<!-- Registration -->
+<div id="registration" class="container">
+    <h1>Examination Registration</h1>
+    <label>Name:</label>
+    <input type="text" id="regName">
+    <label>Roll Number:</label>
+    <input type="text" id="regRoll">
+    <label>Course:</label>
+    <input type="text" id="regCourse">
+    <label>Exam Fee:</label>
+    <input type="number" id="regFee">
+    <button onclick="registerExam()">Pay & Register</button>
+</div>
+
+<!-- Registration Success -->
+<div id="registrationSuccess" class="container">
+    <h1>Registration Successful ✅</h1>
+    <div class="success-box">
+        <p><b>Name:</b> <span id="successName"></span></p>
+        <p><b>Roll Number:</b> <span id="successRoll"></span></p>
+        <p><b>Course:</b> <span id="successCourse"></span></p>
+        <p><b>Exam Fee:</b> ₹<span id="successFee"></span></p>
+        <p><b>Transaction ID:</b> <span id="successTxn"></span></p>
+        <p><b>Date & Time:</b> <span id="successDate"></span></p>
+    </div>
+</div>
+
+<!-- Test -->
+<div id="test" class="container">
+    <h1>Data Science Test</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What does 'CSV' stand for?</p>
+            <input type="radio" name="q1" value="0"> Computer Separated Values<br>
+            <input type="radio" name="q1" value="1"> Comma Separated Values<br>
+        </div>
+        <div class="question">
+            <p>2. Which library is used for data analysis in Python?</p>
+            <input type="radio" name="q2" value="0"> NumPy<br>
+            <input type="radio" name="q2" value="1"> Pandas<br>
+        </div>
+        <div class="question">
+            <p>3. Which algorithm is used for classification?</p>
+            <input type="radio" name="q3" value="0"> K-Means<br>
+            <input type="radio" name="q3" value="1"> Decision Tree<br>
+        </div>
+        <div class="question">
+    <p>4. Which HTML tag is used to create a hyperlink?</p>
+    <input type="radio" name="q1" value="0"> &lt;link&gt;<br>
+    <input type="radio" name="q1" value="1"> &lt;a&gt;<br>
+</div>
+
+<div class="question">
+    <p>5. Which CSS property is used to change text color?</p>
+    <input type="radio" name="q2" value="0"> font-style<br>
+    <input type="radio" name="q2" value="1"> color<br>
+</div>
+
+<div class="question">
+    <p>6. Which algorithm is used for classification?</p>
+    <input type="radio" name="q3" value="0"> K-Means<br>
+    <input type="radio" name="q3" value="1"> Decision Tree<br>
+</div>
+
+<div class="question">
+    <p>7. Which of the following is a JavaScript framework?</p>
+    <input type="radio" name="q4" value="0"> Laravel<br>
+    <input type="radio" name="q4" value="1"> React<br>
+</div>
+
+<div class="question">
+    <p>8. Which SQL command is used to retrieve data from a database?</p>
+    <input type="radio" name="q5" value="0"> UPDATE<br>
+    <input type="radio" name="q5" value="1"> SELECT<br>
+</div>
+
+<div class="question">
+    <p>9. Which of the following is a NoSQL database?</p>
+    <input type="radio" name="q6" value="0"> MySQL<br>
+    <input type="radio" name="q6" value="1"> MongoDB<br>
+</div>
+
+<div class="question">
+    <p>10. Which tag is used to display an image in HTML?</p>
+    <input type="radio" name="q7" value="0"> &lt;img&gt;<br>
+    <input type="radio" name="q7" value="1"> &lt;image&gt;<br>
+</div>
+
+        <button type="button" onclick="submitTest()">Submit Test</button>
+    </form>
+</div>
+
+<!-- Results -->
+<div id="results" class="container">
+    <h1>Test Results</h1>
+    <p id="resultText">No results yet.</p>
+</div>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.container').forEach(div => div.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+
+function login() {
+    let role = document.getElementById("role").value;
+    if(role === "student"){
+        document.getElementById("studentDetails").style.display = "block";
+    } else {
+        alert("Faculty login successful (no details to display)");
+    }
+}
+
+function registerExam() {
+    let name = document.getElementById("regName").value;
+    let roll = document.getElementById("regRoll").value;
+    let course = document.getElementById("regCourse").value;
+    let fee = document.getElementById("regFee").value;
+
+    if(!name || !roll || !course || !fee){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    let txnId = "TXN" + Math.floor(Math.random() * 1000000000);
+    let dateTime = new Date().toLocaleString();
+
+    document.getElementById("successName").innerText = name;
+    document.getElementById("successRoll").innerText = roll;
+    document.getElementById("successCourse").innerText = course;
+    document.getElementById("successFee").innerText = fee;
+    document.getElementById("successTxn").innerText = txnId;
+    document.getElementById("successDate").innerText = dateTime;
+
+    showPage('registrationSuccess');
+}
+
+function submitTest() {
+    let score = 0;
+    let total = 3;
+    let form = document.getElementById("quizForm");
+    let answers = [1,1,1]; // correct options
+    answers.forEach((ans, i) => {
+        let q = form.querySelector(`input[name="q${i+1}"]:checked`);
+        if(q && parseInt(q.value) === ans) score++;
+    });
+    document.getElementById("resultText").innerText = `You scored ${score} out of ${total}`;
+    showPage('results');
+}
+</script>
+
+</body>
+</html>
